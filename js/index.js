@@ -40,3 +40,112 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+////////////////NAVIGATION//////////////////////
+const nav = document.querySelectorAll("a");
+// console.log(nav);
+const navigation = Object.values(siteContent.nav);
+
+nav.forEach((e, i) => {
+  e.textContent = navigation[i];
+});
+
+////navImage////
+const navImage = document.getElementById("logo-img");
+// console.log(navImage);
+navImage.src = siteContent["nav"]["img-src"]
+navImage.alt = "Image of nav logo"
+
+
+////////////////APPEND & PREPEND////////////////
+////create new nav anchor to append////
+const newNav = document.createElement("a");
+// console.log(newNav);
+////added content to new element////
+newNav.textContent = "Sign Up";
+////appendToNav////
+const newNavAppend = document.querySelector("nav");
+// console.log(newNavAppend); 
+newNavAppend.append(newNav);
+
+////creat new nav anchor to prepend////
+const otherNewNav = document.createElement("a");
+console.log(otherNewNav);
+////added content to new element////
+otherNewNav.textContent = "Login";
+////prepend to Nav////
+const newNavPrepend = document.querySelector("nav");
+newNavPrepend.prepend(otherNewNav);
+////////////////////////////////////////////////////
+
+////////////////////textGreen/////////////////////
+const textGreen = document.querySelectorAll("nav a");
+// console.log(textGreen);
+textGreen.forEach(element => {
+  // console.log(element);
+  element.style.color = "Green";
+});
+
+
+
+
+////////////////CTA///////////////////////////
+const ctaText = document.querySelector(".cta .cta-text h1")
+// console.log(ctaText);
+ctaText.textContent = siteContent["cta"]["h1"]
+
+const ctaButton = document.querySelector(".cta .cta-text button")
+// console.log(ctaButton);
+ctaButton.textContent = siteContent["cta"]["button"]
+
+////ctaImage////
+const ctaImage = document.getElementById("cta-img");
+// console.log(ctaImage);
+ctaImage.src = siteContent["cta"]["img-src"]
+ctaImage.alt = "Image of a code snippet"
+
+
+
+////////////////MAIN-CONTENT///////////////////
+const mainContentHeader = document.querySelectorAll(".main-content .text-content h4");
+// console.log(mainContentTop);
+mainContentHeader[0].textContent = siteContent["main-content"]["features-h4"]
+mainContentHeader[1].textContent = siteContent["main-content"]["about-h4"]
+mainContentHeader[2].textContent = siteContent["main-content"]["services-h4"]
+mainContentHeader[3].textContent = siteContent["main-content"]["product-h4"]
+
+const mainContentPara = document.querySelectorAll(".main-content .text-content p")
+mainContentPara[0].textContent = siteContent["main-content"]["features-content"]
+mainContentPara[1].textContent = siteContent["main-content"]["about-content"]
+mainContentPara[2].textContent = siteContent["main-content"]["services-content"]
+mainContentPara[3].textContent = siteContent["main-content"]["vision-content"]
+
+////mainImage////
+const mainImage = document.getElementById("middle-img");
+// console.log(mainImage);
+mainImage.src = siteContent["main-content"]["middle-img-src"]
+mainImage.alt = "Image of code snippets across the screen"
+
+
+
+
+/////////////////CONTACT///////////////////////
+const contactName = document.querySelector(".contact h4");
+// console.log(contactName);
+contactName.textContent = siteContent["contact"]["contact-h4"];
+
+const contactPara = document.querySelectorAll(".contact p");
+// console.log(contactPara);
+contactPara[0].textContent = siteContent["contact"]["address"]
+contactPara[1].textContent = siteContent["contact"]["phone"]
+contactPara[2].textContent = siteContent["contact"]["email"]
+
+
+
+
+//////////////////FOOTER////////////////////////
+const footer = document.querySelector("footer p");
+// console.log(footer);
+footer.textContent = siteContent["footer"]["copyright"]
+
+
